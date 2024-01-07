@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center+;
+        }
+        .container{
+            background-color: rgb(170, 217, 217);
+            height: min-content;
+            width: max-content;
+            display: grid;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            border-radius: 9px;
+        }
+        
+        .l1{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2px;
+            margin: 2px;
+           
+            
+        }
+        .l2{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2px;
+            margin: 2px;
+           
+            
+        }
+        
+        .l3{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2px;
+            margin: 2px;
+           
+            
+        }
+        
+        .l4{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2px;
+            margin: 2px;
+           
+            
+        }
+        
+        .l5{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2px;
+            margin: 2px;
+           
+            
+        }
+        .btn{
+            width: 29px;
+            border-radius: 11px;
+            height: 29px;
+            font-weight: 600;
+            padding: 2px;
+            margin: 2px;
+            
+
+
+        }
+        #inp{
+            height: 5vh;
+            border-radius: 7px;
+            background-color: rgb(209, 183, 149);
+            width: 100%;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="f1">
+            
+            <input type="text" id="inp" autofocus>
+            
+            
+        </div>
+        <div class="l1">
+            <button type="button" class="btn" value=""  name="AC" onclick="Clear()">AC</button>
+            <button type="button" class="btn" value="" name="AC" onclick="Back()">DEL</button>
+            <button type="button"  class="btn" value="" name="AC" onclick="Solve('%')">%</button>
+            <button type="button" class="btn" value="" name="AC" onclick="Solve('/')">/</button>
+
+        </div>
+        <div class="l2">
+            <input type="button" class="btn"  name="" value="7" onclick="Solve('7')">
+            <input type="button" class="btn" width="" name="" value="8" onclick="Solve('8')">
+            <input type="button" class="btn" name="" value="9" onclick="Solve('9')">
+            <button name="plus"class="btn" value="+" onclick="Solve('*')">*</button>
+            
+        </div>
+        <div class="l3">
+            <input type="button" class="btn" name="" value="4" onclick="Solve('4')">
+            <input type="button" class="btn" name="" value="5" onclick="Solve('5')">
+            <input type="button" class="btn" name="" value="6" onclick="Solve('6')">
+            <button name="plus" class="btn" value="+" onclick="Solve('+')">+</button>
+            
+        </div>
+        <div class="l4">
+            <input type="button" class="btn" name="" value="1" onclick="Solve('1')">
+            <input type="button" class="btn" name="" value="2" onclick="Solve('2')">
+            <input type="button"class="btn" name="" value="3" onclick="Solve('3')">
+            <button name="plus" class="btn" value="+" onclick="Solve('-')">-</button>
+            
+        </div>
+        <div class="l5">
+            <button name="plus" class="btn" value="+">+_</button>
+            <input type="button" class="btn" name="" value="0" onclick="Solve('0')"|>
+            <input type="button"class="btn" name="" value="." onclick="Solve('.')">
+            <button name="plus"class="btn"  value="" onclick="Result()">=</button>
+            
+        </div>
+    </div>
+    <script>
+        function Solve(o){
+            var inp=document.getElementById("inp");
+            inp.value+=o;
+        }
+        function Result(){
+            var num1=document.getElementById("inp").value;
+            var num2=eval(num1);
+            document.getElementById("inp").value=num2;
+        }
+        function Clear(){
+
+            var ev=document.getElementById("inp");
+            inp.value='';
+
+        }
+        function Back(){
+            var ev=document.getElementById("inp");
+            ev.value=ev.value.slice(0,-1);
+        }
+    </script>
+    
+</body>
+</html>
